@@ -1,0 +1,6 @@
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table component uses global styles from index.css */
