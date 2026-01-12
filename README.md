@@ -1,46 +1,5 @@
 
-Navigation Menu
-Zerava-Doccumentation
 
-Code
-Issues
-Pull requests
-Official documentation for the Zerava project
-
-License
- MIT license
- 0 stars
- 0 forks
- 0 watching
- 1 Branch
- 0 Tags
- Activity
- Custom properties
-Public repository
-Zerava-ZeroNoise/Zerava-Doccumentation
-Name	
-Zakariasisu5
-Zakariasisu5
-2 days ago
-DIR_tree.md
-2 days ago
-LICENSE
-2 days ago
-README.md
-2 days ago
-Zerava – Pre‑development Planning Document.pdf
-2 days ago
-Zerava — Branding & Logo Design.pdf
-2 days ago
-Zerava — Frontend Design & Styling Specification.pdf
-2 days ago
-Zerava — Web App Architecture & Mvp Implementation.pdf
-2 days ago
-Zerava_Project_Documentation.pdf
-2 days ago
-Repository files navigation
-README
-MIT license
 Zerava — Zero noise. Real security.
 Zerava is a lightweight cybersecurity platform designed to help startups and small teams identify and fix critical security risks before they turn into costly breaches.
 
@@ -147,6 +106,3 @@ Create a feature branch
 Submit a pull request with clear details
 📄 License
 MIT License — free to use, modify, and contribute.
-
-📄 License
-MIT License.
