@@ -1,0 +1,12 @@
+/* minimal example */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
