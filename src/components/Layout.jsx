@@ -1,9 +1,18 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, startTransition } from 'react';
 import logoImage from '../assets/logo.jpg';
 import './Layout.css';
 
 export default function Layout() {
   const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    // close mobile menu when the route changes — use startTransition
+    // and only update if it was open to avoid cascading renders
+    startTransition(() => {
+      setMobileOpen((prev) => (prev ? false : prev));
+    });
+  }, [location.pathname]);
 
   const isActive = (path) => {
     return location.pathname === path ? 'active' : '';
@@ -16,14 +25,25 @@ export default function Layout() {
           <img src={logoImage} alt="Zerava" className="nav-logo" />
           <span className="nav-brand-text">Zerava</span>
         </Link>
-        <div className="nav-links">
-          <Link to="/" className={`nav-link ${isActive('/')}`}>
+        <button
+          className="nav-toggle"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((s) => !s)}
+        >
+          <span className="nav-toggle-bar" />
+          <span className="nav-toggle-bar" />
+          <span className="nav-toggle-bar" />
+        </button>
+
+        <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
+          <Link to="/" className={`nav-link ${isActive('/')}`} onClick={() => setMobileOpen(false)}>
             Dashboard
           </Link>
-          <Link to="/scan" className={`nav-link ${isActive('/scan')}`}>
+          <Link to="/scan" className={`nav-link ${isActive('/scan')}`} onClick={() => setMobileOpen(false)}>
             New Scan
           </Link>
-          <Link to="/reports" className={`nav-link ${isActive('/reports')}`}>
+          <Link to="/reports" className={`nav-link ${isActive('/reports')}`} onClick={() => setMobileOpen(false)}>
             Reports
           </Link>
         </div>

@@ -463,6 +463,30 @@ a:hover {
   align-items: center;
 }
 
+/* Mobile hamburger toggle */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-toggle:focus {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-secondary);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
 /* Sidebar */
 .sidebar {
   width: var(--sidebar-width);
@@ -598,6 +622,33 @@ a:hover {
   .nav-links {
     display: none;
   }
+
+  .nav-toggle {
+    display: block;
+  }
+  /* ensure mobile nav-links are hidden until hamburger opens */
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 99;
+  }
+
+  /* hide the active/current page link inside the opened mobile menu */
+  .nav-links.open .nav-link.active {
+    display: none !important;
+  }
   
   .nav-logo {
     height: 36px;
@@ -616,6 +667,11 @@ a:hover {
   
   .container {
     padding: 0 var(--spacing-md);
+  }
+
+  /* hide sidebar on mobile so hamburger menu is the only navigation */
+  .sidebar {
+    display: none !important;
   }
   
   :root {
