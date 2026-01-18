@@ -1,0 +1,38 @@
+.dashboard {
+  width: 100%;
+  background: var(--color-page-bg);
+  padding: var(--gutter);
+  border-radius: 0.4rem;
+  min-height: calc(100vh - 64px - 2rem);
+}
+
+.container h1{
+  color: var(--color-white)
+}
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gutter);
+  margin: var(--gutter) 0;
+}
+
+.scan-target {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-white);
+}
+
+.score-value {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.dashboard-actions {
+  margin-top: var(--gutter);
+}
+
+@media (max-width: 768px) {
+  .dashboard-metrics {
+    grid-template-columns: 1fr;
+  }
+}

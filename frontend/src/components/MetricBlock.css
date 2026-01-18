@@ -1,0 +1,22 @@
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--color-light);
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.metric-change {
+  font-size: 0.75rem;
+  color: var(--color-light);
+}
